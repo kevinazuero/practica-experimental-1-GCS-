@@ -9,7 +9,16 @@
   <head>
     {% include 'public/includes/head.html' %}
     <!---->
-    {% block customCSS %} {% endblock %}
+    {% block customCSS %}
+        <style>
+          .bg-pink {
+            background-color: #e83e8c !important; /* rosa */
+          }
+          .bg-blue {
+            background-color: #007bff !important; /* azul */
+          }
+        </style>
+    {% endblock %}
   </head>
   <body>
     {% include 'public/includes/pre_loader.html' %}

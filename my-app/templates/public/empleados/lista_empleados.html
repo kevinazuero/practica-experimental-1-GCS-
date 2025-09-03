@@ -46,7 +46,22 @@
               <td>{{ loop.index }}</td>
               <td>{{ empleado.nombre_empleado }}</td>
               <td>{{ empleado.apellido_empleado }}</td>
-              <td>{{ empleado.sexo_empleado }}</td>
+              <td>
+                  {% if empleado.sexo_empleado == 'Femenino' %}
+                    <span class="badge bg-pink text-white px-3 py-2">
+                      {{ empleado.sexo_empleado }}
+                    </span>
+                  {% elif empleado.sexo_empleado == 'Masculino' %}
+                    <span class="badge bg-blue text-white px-3 py-2">
+                      {{ empleado.sexo_empleado }}
+                    </span>
+                  {% else %}
+                    <span class="badge bg-secondary text-white px-3 py-2">
+                      {{ empleado.sexo_empleado }}
+                    </span>
+                  {% endif %}
+            </td>
+
               <td>
                 $ {{ '{:,.0f}'.format(empleado.salario_empleado).replace(',',
                 '.')}}
